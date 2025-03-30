@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco de los Andes</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Aptos Black', sans-serif;
+        }
+        .header {
+            background-color: rgb(100, 133, 6);
+            font-size: 40px;
+            color: white;
+            padding: 20px;
+        }
+        .subheader {
+            margin: 20px 0;
+            font-size: 30px;
+        }
+        .btn-custom {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row" style="background-color:rgb(100,133,6); font-size: 40px;" >
+            <div class="1-col" style="margin-left: 20px; font-size: 38px; font-family: 'Aptos Black';">Banco </div>
+        </div>
+
+        <div class="row subheader">
+            <div class="col">
+                Funcionalidades para agregar datos a la base de datos
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3">
+                <a th:href="@{usuarios/new}" class="btn btn-primary btn-block btn-custom">Crear Usuario</a>
+                <a th:href="@{/oficinas}" class="btn btn-primary btn-block btn-custom">Crear Oficina</a>
+                <a th:href="@{puntosAtencion}" class="btn btn-primary btn-block btn-custom">Punto de Atención</a>
+                <a th:href="@{/cuentas}" class="btn btn-primary btn-block btn-custom">Manejo de Cuentas</a>
+                <a th:href="@{/operacionesCuentas}" class="btn btn-primary btn-block btn-custom">Operar Cuentas</a>
+            </div>
+        </div>
+
+        <div class="row subheader">
+            <div class="col">
+                Consultas sobre las cuentas
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3">
+                <a th:href="@{/consultas}" class="btn btn-primary btn-block btn-custom">Hacer consultas</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

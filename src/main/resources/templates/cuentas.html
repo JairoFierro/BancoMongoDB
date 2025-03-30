@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cuentas</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+  <script th:src="@{/css/jquery.min.js}"></script>
+  <script th:src="@{/css/bootstrap.min.js}"></script>
+  <style>
+    .header {
+      background-color: rgb(100, 133, 6);
+      font-size: 40px;
+    }
+    .header-text {
+      margin-left: 20px;
+      font-size: 38px;
+      font-family: 'Aptos Black';
+    }
+  </style>
+</head>
+<body>
+
+  <div class="row" style="background-color:rgb(100,133,6); font-size: 40px;" >
+    <div class="1-col" style="margin-left: 20px; font-size: 38px; font-family: 'Aptos Black';">Banco </div>
+  </div>
+
+<div class="container">
+
+
+  <div class="text-center">
+    <h1>Lista de cuentas</h1>
+
+    <div class="row">
+      <table class="table table-hover table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>ID</th>
+            <th>Número de Cuenta</th>
+            <th>Estado</th>
+            <th>Saldo</th>
+            <th>Tipo</th>
+            <th>Cliente</th>
+            <th>Última Transacción</th>
+            <th>Gerente de Oficina Creador</th>
+            <th>Fecha de Creación</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <th:block th:each="usuario : ${usuarios}">
+            <th:block th:each="cuenta : ${usuario.cuentas}">
+              <tr>
+                <td th:text="${cuenta.id}"></td>
+                <td th:text="${cuenta.numero_cuenta}"></td>
+                <td th:text="${cuenta.estado}"></td>
+                <td th:text="${cuenta.saldo}"></td>
+                <td th:text="${cuenta.tipo}"></td>
+                <td th:text="${usuario.nombre}"></td>
+                <td th:text="${cuenta.ultima_transaccion}"></td>
+                <td th:text="${cuenta.gerente_oficina}"></td>
+                <td th:text="${cuenta.fecha_creacion}"></td>
+                <td>
+                  <a th:href="@{/cuentas/{id_usuario}/edit/{id_cuenta}(id_usuario=${usuario.id},id_cuenta=${cuenta.id})}" class="btn btn-info">Cambiar Estado</a>
+                </td>
+              </tr>
+            </th:block>
+          </th:block>
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <a th:href="@{/cuentas/new}" class="btn btn-primary">Añadir Cuenta</a>
+      <a th:href="@{/}" class="btn btn-primary">Volver Atrás</a>
+    </div>
+    <br />
+  </div>
+</div>
+</body>
+</html>

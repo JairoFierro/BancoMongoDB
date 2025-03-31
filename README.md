@@ -1,6 +1,6 @@
 # BancoMongoDB
 
-Aplicación web desarrollada con Spring Boot y MongoDB que simula operaciones básicas de un banco. Permite la gestión de usuarios, cuentas, oficinas, puntos de atención y operaciones financieras, todo desde una interfaz web dinámica.
+Esta aplicación web fue desarrollada con Spring Boot y MongoDB. Simula operaciones básicas de un banco. Permite la gestión de usuarios, cuentas, oficinas, puntos de atención y operaciones financieras, todo desde una interfaz web dinámica.
 
 ---
 
